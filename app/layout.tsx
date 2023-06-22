@@ -1,9 +1,6 @@
-"use client"
-
 import Header from '@/components/Header'
 import './globals.css'
 import Footer from '@/components/Footer'
-import { useState } from 'react'
 
 export const metadata = {
   title: 'Carana',
@@ -15,12 +12,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <html lang="en" className={`${isOpen ? 'overflow-hidden' : 'overflow-visible'}`}>
+    <html lang="en">
       <body className="relative">
-        <Header handleOpen={setIsOpen}/>
+        <Header />
         {children}
         <Footer />
       </body>

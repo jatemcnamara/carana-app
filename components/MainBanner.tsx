@@ -15,7 +15,7 @@ const MainBanner = () => {
             <p className='text-center lg:text-left text-xl font-nunitoRegular mt-4 lg:mt-10 w-full lg:w-4/6'>Explore hundreds of cars in a couple of clicks!</p>
         </div>
 
-        <Image alt='' src='/x5-banner.png' width={2000} height={2000} className='w-full lg:w-3/5  max-w-5xl mt-6 lg:mt-0' />
+        <Image alt='' src='/x5-banner.png' width={2000} height={2000} className='w-full lg:w-3/5  max-w-5xl mt-6 lg:mt-0' priority />
     </div>
   )
 }

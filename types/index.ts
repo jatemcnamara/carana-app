@@ -62,6 +62,3 @@ export interface ShowMoreInterface {
     isNext: boolean
 }
 
-export interface HeaderInterface {
-    handleOpen: (value: boolean) => void
-}

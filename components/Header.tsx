@@ -2,11 +2,22 @@
 
 import React, { useState } from 'react'
 import Link from 'next/link'
-import Button from './ui/Button'
-import { HeaderInterface } from '@/types'
 
-const Header = ({handleOpen}: HeaderInterface) => {
+const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
+
+
+
+  const handleOpen = (value: boolean) => {
+    setIsOpen(value)
+
+    if (value){
+      document.body.classList.add('overflow-hidden')
+    } else{
+      document.body.classList.remove('overflow-hidden')
+    }
+    
+  }
 
   return (
     <header className='w-4/5 max-w-max mx-auto h-20 flex flex-row justify-between items-center'>
@@ -20,10 +31,7 @@ const Header = ({handleOpen}: HeaderInterface) => {
           <Link href="/" className='z-30 '>Contacts</Link>
         </nav>
 
-        <div className="space-y-[6px] h-[18px] relative z-30 lg:hidden" onClick={() => {
-          setIsOpen(!isOpen)
-          handleOpen(!isOpen)
-        }}>
+        <div className="space-y-[6px] h-[18px] relative z-30 lg:hidden" onClick={() => handleOpen(!isOpen)}>
           <span className={`${isOpen ? 'origin-top-left rotate-[45deg] mb-[7px]' : ''} transition duration-200 block w-7 h-[2px] bg-gray-400`}></span>
           <span className={`${isOpen ? 'hidden' : ''} block w-9 h-[2px] bg-gray-400`}></span>
           <span className={`${isOpen ? 'origin-bottom rotate-[-45deg] ml-[-4px]' : ''} transition duration-200 block w-7 h-[2px] bg-gray-400`}></span>
